@@ -1,9 +1,12 @@
 import React from 'react';
+//Renderizar elementos na tela
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//Componentes
+import App from './componentes/App';
+
+//Ele renderiza o root, que é o conteúdo do HTML já definido
 ReactDOM.render(
   <React.StrictMode>
     <App />
