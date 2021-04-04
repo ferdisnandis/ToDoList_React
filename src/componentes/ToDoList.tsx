@@ -1,10 +1,10 @@
-import React from 'react';
-import { ToDo } from '../models/ToDo';
+import React, { useContext } from 'react';
+import ToDoListItem from '../componentes/ToDoListItem'
+import { ToDoContextType } from '../contexts/ToDoContextType';
+import ToDoContext from '../contexts/ToDoContext';
 
 const ToDoList = () => {
-    const todos: ToDo[] = [
-        {id: 2, title:'Ir a academia', done: false}
-    ];
+        const { todos } = useContext<ToDoContextType>(ToDoContext);
 
     return(
         <div>
@@ -20,7 +20,7 @@ const ToDoList = () => {
             <tbody>
                 {
                     todos.map(
-                        todo => (<div key={todo.id}>{todo.title}</div>)
+                        todo => (<ToDoListItem key={todo.id} todo={todo}></ToDoListItem>)
                     )
                 }
             </tbody>
